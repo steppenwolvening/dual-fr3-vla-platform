@@ -1,0 +1,54 @@
+{
+  "repo": "lerobot/pi05_base",
+  "revision": "22c30e5b34f9e7ab738b1b34fc2fc5ecfe2d28f0",
+  "downloaded": false,
+  "files": [
+    {
+      "path": ".eval_results/vlabench.yaml",
+      "size": 251,
+      "oid": "5485388efeac454509a97d2bb6afc4a6eb232b82",
+      "lfs": null
+    },
+    {
+      "path": ".gitattributes",
+      "size": 1519,
+      "oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "lfs": null
+    },
+    {
+      "path": "README.md",
+      "size": 5139,
+      "oid": "819a1034c09317596b32a231d46110987f2ffb48",
+      "lfs": null
+    },
+    {
+      "path": "config.json",
+      "size": 1896,
+      "oid": "427ddad026d32374cfc84b812e00b5d19cd1abc6",
+      "lfs": null
+    },
+    {
+      "path": "model.safetensors",
+      "size": 14467165872,
+      "oid": "822bdb619cecbe41045c54788df264e57ec03572",
+      "lfs": {
+        "oid": "0eb11ca9587678c1d2ef8cf32807c29f8ce53a2bfdfc1aa4a4c96f16fca59b0f",
+        "size": 14467165872,
+        "pointerSize": 136
+      }
+    },
+    {
+      "path": "policy_postprocessor.json",
+      "size": 567,
+      "oid": "4fffbccee7c63732d79643d71fe17ea7a55ca528",
+      "lfs": null
+    },
+    {
+      "path": "policy_preprocessor.json",
+      "size": 1241,
+      "oid": "32760dcc78bee681b0ea4de2c70bb9c8a440f505",
+      "lfs": null
+    }
+  ],
+  "total_bytes": 14467176485
+}

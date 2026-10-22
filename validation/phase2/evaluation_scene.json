@@ -1,0 +1,6 @@
+{
+  "status": "PASS_SIM",
+  "scope": "actual evaluation scene compiles with three cameras",
+  "renderer": "NOT_RUN",
+  "model_inference": "NOT_RUN"
+}

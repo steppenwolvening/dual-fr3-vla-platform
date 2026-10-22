@@ -1,0 +1,19 @@
+{
+  "source_url": "https://github.com/huggingface/lerobot",
+  "commit": "5aa74557f84c54d4b458f8b9643c5aa2982acfed",
+  "files": {
+    "src/lerobot/policies/pi05/configuration_pi05.py": "e19e2d1bfe1d2f4243e800d28c70b51cb70969fde0cae2a7e6b0452042ddf569",
+    "src/lerobot/policies/pi05/modeling_pi05.py": "3bbc8480e4a96434275daef50d4341fafcf4bacfc8533d07a2fd16df2f56ae23",
+    "src/lerobot/policies/pi05/processor_pi05.py": "d276557b6bc002df714a2011867363b6ec45b687d3af84dc020c3734071409d6",
+    "src/lerobot/datasets/factory.py": "bf3259f5e7ab4ff60bad8b1c33e07532e66da2ab5daeb1894edbe958fa215971"
+  },
+  "framework": "PyTorch",
+  "native_version": "0.6.2",
+  "base_checkpoint": {
+    "repo": "lerobot/pi05_base",
+    "revision": "22c30e5b34f9e7ab738b1b34fc2fc5ecfe2d28f0",
+    "format": "safetensors",
+    "license": "gemma",
+    "downloaded": false
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "repo": "robbyant/lingbot-vla-v2-6b",
+  "revision": "11c703bf6a5c1f45b3b69168482da11fdbba53d7",
+  "downloaded": false,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size": 1797,
+      "oid": "1f652735ddd4e0c09ef277872f717c63c8b58f24",
+      "lfs": null
+    },
+    {
+      "path": "README.md",
+      "size": 2227,
+      "oid": "be90760c49c132460b18fed4e9327ef326a697ee",
+      "lfs": null
+    },
+    {
+      "path": "added_tokens.json",
+      "size": 707,
+      "oid": "b54f9135e44c1e81047e8d05cb027af8bc039eed",
+      "lfs": null
+    },
+    {
+      "path": "assets/lingbot_vla2_framework.png",
+      "size": 1178043,
+      "oid": "bc5c298f2a9560b31634917e3c58e936fe365990",
+      "lfs": {
+        "oid": "1dbbf05745216032dad897f6f5e59d02153325e1d39cfc01329b85e2ea2e41e7",
+        "size": 1178043,
+        "pointerSize": 132
+      }
+    },
+    {
+      "path": "assets/lingbot_vla2_loss_mse_comparison.png",
+      "size": 445663,
+      "oid": "dbc01ac444b9c3d29d829e116ade9391ea45bbb3",
+      "lfs": {
+        "oid": "95108dee5d57842d18be27bf92424123b823449567f3d60cefbbac59379ffedd",
+        "size": 445663,
+        "pointerSize": 131
+      }
+    },
+    {
+      "path": "assets/lingbot_vla2_vis_distillation.png",
+      "size": 2317830,
+      "oid": "76fb54d614747dc6a998776da324ec2b0b4cb79c",
+      "lfs": {
+        "oid": "40ce6810ea47ab944de030551efd7753fb2ed84bd7477d3668ba0fab84c3277e",
+        "size": 2317830,
+        "pointerSize": 132
+      }
+    },
+    {
+      "path": "config.json",
+      "size": 31,
+      "oid": "69c8d69fb69ea6ef5740c524ade3ffdd1409b4c4",
+      "lfs": null
+    },
+    {
+      "path": "depth/model.pt",
+      "size": 1316220456,
+      "oid": "1e42b4fd865b57dd468f48b16a59cc686ec8a1ea",
+      "lfs": {
+        "oid": "d70c5191eab853d436763b35d40ff99d13534b4bcd43e4d02823656968159e5b",
+        "size": 1316220456,
+        "pointerSize": 135
+      }
+    },
+    {
+      "path": "dino_video/config.yaml",
+      "size": 1388,
+      "oid": "9223ab64a8e0081cd46446381dc4e6dce3a23080",
+      "lfs": null
+    },
+    {
+      "path": "dino_video/teacher_step_10000.pth",
+      "size": 1401509792,
+      "oid": "7465d0f90206db65e1923464843c36a15744b2d2",
+      "lfs": {
+        "oid": "086285efd8d65bc66e96b363807c4010ee5c790b7452b765edaa23837a63705b",
+        "size": 1401509792,
+        "pointerSize": 135
+      }
+    },
+    {
+      "path": "model-00001-of-00006.safetensors",
+      "size": 4987151072,
+      "oid": "bd0dd34a5269a5ecf1050c81078b1121afb5e720",
+      "lfs": {
+        "oid": "4afb52b06a13df8b738a156ae5c8196d3bfe6b3ca931cecbd701e44cb9674e45",
+        "size": 4987151072,
+        "pointerSize": 135
+      }
+    },
+    {
+      "path": "model-00002-of-00006.safetensors",
+      "size": 4985113408,
+      "oid": "766a2175137142a250fc88417caa28b1600876e9",
+      "lfs": {
+        "oid": "ec131afa26a340db94c0dba8ec00e990be5f3d842ce6532070f0c8e26a067501",
+        "size": 4985113408,
+        "pointerSize": 135
+      }
+    },
+    {
+      "path": "model-00003-of-00006.safetensors",
+      "size": 4928593216,
+      "oid": "1d987bd9214fa3602e892c8b0d3b5b10903cbbc5",
+      "lfs": {
+        "oid": "7dccb068ca66c11fa514476d64661eeead56e2e80e1c0572c9ea82aa0d9ecf27",
+        "size": 4928593216,
+        "pointerSize": 135
+      }
+    },
+    {
+      "path": "model-00004-of-00006.safetensors",
+      "size": 4990740540,
+      "oid": "7053f6eb8b983e3acb41b2c868b5c33206505f0f",
+      "lfs": {
+        "oid": "1c2cb78066b69ae11255db851df95071e2cd69a3a4bc5020b3fd3b13b17819fb",
+        "size": 4990740540,
+        "pointerSize": 135
+      }
+    },
+    {
+      "path": "model-00005-of-00006.safetensors",
+      "size": 4990095864,
+      "oid": "798fdaf6a23ac885c2fc67a0e42042b1448ba79c",
+      "lfs": {
+        "oid": "8fe36bf1f4f617869954bdfa1ad12e16abd8b0235a5fa99c88d571d4cddf4a17",
+        "size": 4990095864,
+        "pointerSize": 135
+      }
+    },
+    {
+      "path": "model-00006-of-00006.safetensors",
+      "size": 622195024,
+      "oid": "cc95a23d9636fbb6e9d7400008cc3cd1a765b34b",
+      "lfs": {
+        "oid": "3cf613d592dad64b1e2a1b1bb34a6f556a7fa05eacdb9972d73e0ea4882555a0",
+        "size": 622195024,
+        "pointerSize": 134
+      }
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "size": 207389,
+      "oid": "ecd860c133b9b5c77072202d56e3ab38b8e74326",
+      "lfs": null
+    },
+    {
+      "path": "preprocessor_config.json",
+      "size": 782,
+      "oid": "2fa6553554f69b4e3a6b742a75264ff9dff90ad0",
+      "lfs": null
+    },
+    {
+      "path": "special_tokens_map.json",
+      "size": 613,
+      "oid": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "lfs": null
+    },
+    {
+      "path": "tokenizer.json",
+      "size": 11422654,
+      "oid": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+      "lfs": {
+        "oid": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "size": 11422654,
+        "pointerSize": 133
+      }
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size": 5472,
+      "oid": "35d32052b3bc1bc9493b6cc3d8b0f22acf33dc83",
+      "lfs": null
+    },
+    {
+      "path": "video_preprocessor_config.json",
+      "size": 817,
+      "oid": "e32b1d90356f74457edbfca27aa1e121dab7cdc7",
+      "lfs": null
+    },
+    {
+      "path": "vocab.json",
+      "size": 2776833,
+      "oid": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "lfs": null
+    }
+  ],
+  "total_bytes": 28239981618
+}

@@ -1,0 +1,100 @@
+{
+  "status": "PASS_OFFLINE",
+  "scope": "real upstream VLADataset + FeatureTransform + torch DataLoader before processor/tokenizer; actual pad_and_concat",
+  "full_training_collator": "NOT_RUN",
+  "model": "NOT_RUN",
+  "upstream_commit": "be969b8fd117fb70550c5d4bf4bc328211b5b1b6",
+  "import_mode": "leaf packages; unrelated eager distributed initialization skipped",
+  "versions": {
+    "lerobot": "0.4.4",
+    "torch": "2.7.1+cu128",
+    "datasets": "4.1.1"
+  },
+  "stats_sha256": "14fb04e17063e25c5111891690743b18807e1463c5a94678a2c9ad33796703ab",
+  "records": [
+    {
+      "split": "train",
+      "frames": 20,
+      "normalized_arm_batch": [
+        2,
+        50,
+        14
+      ],
+      "normalized_gripper_batch": [
+        2,
+        50,
+        2
+      ],
+      "category_padded_action": [
+        50,
+        51
+      ],
+      "model_padded_action": [
+        50,
+        55
+      ],
+      "valid_internal_dimensions": 16,
+      "padding_mask_true": [
+        30,
+        31
+      ],
+      "denormalization_roundtrip": "PASS"
+    },
+    {
+      "split": "validation",
+      "frames": 20,
+      "normalized_arm_batch": [
+        2,
+        50,
+        14
+      ],
+      "normalized_gripper_batch": [
+        2,
+        50,
+        2
+      ],
+      "category_padded_action": [
+        50,
+        51
+      ],
+      "model_padded_action": [
+        50,
+        55
+      ],
+      "valid_internal_dimensions": 16,
+      "padding_mask_true": [
+        30,
+        31
+      ],
+      "denormalization_roundtrip": "PASS"
+    },
+    {
+      "split": "test",
+      "frames": 20,
+      "normalized_arm_batch": [
+        2,
+        50,
+        14
+      ],
+      "normalized_gripper_batch": [
+        2,
+        50,
+        2
+      ],
+      "category_padded_action": [
+        50,
+        51
+      ],
+      "model_padded_action": [
+        50,
+        55
+      ],
+      "valid_internal_dimensions": 16,
+      "padding_mask_true": [
+        30,
+        31
+      ],
+      "denormalization_roundtrip": "PASS"
+    }
+  ]
+}

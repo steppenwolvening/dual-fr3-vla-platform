@@ -11,8 +11,8 @@ HOME=np.array([0.,-.5,0.,-2.,0.,1.5,math.pi/4])
 
 class DualFR3:
     source='simulation'
-    def __init__(self, model_path=MODEL):
-        self.model=mujoco.MjModel.from_xml_path(str(model_path));self.data=mujoco.MjData(self.model)
+    def __init__(self, model_path=MODEL, *, model=None):
+        self.model=model if model is not None else mujoco.MjModel.from_xml_path(str(model_path));self.data=mujoco.MjData(self.model)
         self.model_path=Path(model_path)
         self.manifest=json.loads((self.model_path.parent/'provenance.json').read_text())
         self.joints={s:[self.model.joint(f'{s}_fr3_joint{i}').id for i in range(1,8)] for s in SIDES}

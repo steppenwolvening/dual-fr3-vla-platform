@@ -1,0 +1,112 @@
+{
+  "commit": "be969b8fd117fb70550c5d4bf4bc328211b5b1b6",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 14068,
+      "sha256": "43e526e942c5c9b0a7302dc2181229ce00b31f06da754d033110c3aafdc72712"
+    },
+    {
+      "path": "LICENSE",
+      "size": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "requirements.txt",
+      "size": 742,
+      "sha256": "4bea8eca2e5e81107332947fe38d9a2787bc6a8fe4d3f875fa7e3d028f48993d"
+    },
+    {
+      "path": "lingbotvla/data/dataset.py",
+      "size": 8994,
+      "sha256": "120991b363c4c4457546de56913d9fb6d5fbcf433a790dba0bc28ff96df15809"
+    },
+    {
+      "path": "lingbotvla/data/vla_data/base_dataset.py",
+      "size": 11511,
+      "sha256": "3d1550e644778ab4ec15c22fae4a9ed799ff5b0f27d7d81b83b218d2c777da65"
+    },
+    {
+      "path": "lingbotvla/data/vla_data/multi_vla_dataset.py",
+      "size": 6310,
+      "sha256": "c484c0c10236b35eb133fdc3cb9488fe7c0df0bde4830cdf545b96d3f7de5085"
+    },
+    {
+      "path": "lingbotvla/data/vla_data/README.md",
+      "size": 11892,
+      "sha256": "8e6cb71b5e74fea590727d4c4deab11a32092a50fc2aae72de5dec9a0c45673b"
+    },
+    {
+      "path": "configs/robot_configs/agilex_cobot_magic.yaml",
+      "size": 562,
+      "sha256": "8ab06b150fe28d7f0f90e67df445325d6b31d4a11929b46b7e06159d94922baa"
+    },
+    {
+      "path": "configs/vla/real_robot/real_robot.yaml",
+      "size": 4106,
+      "sha256": "8d5ddcd1d6caa846c4c0442cc3e9ea3f25078c6f274536d1ee1caadb560d8124"
+    },
+    {
+      "path": "lingbotvla/models/vla/lingbot_vla/configuration_lingbot_vla.py",
+      "size": 8493,
+      "sha256": "37987af05ca8980debf5bfe81211cc2a9db1b2fb0e14e15076fa6497c5baf023"
+    },
+    {
+      "path": "lingbotvla/__init__.py",
+      "size": 624,
+      "sha256": "fcfeb5547f909133485a146441ddcc3072447063914eace4793e487967a88f78"
+    },
+    {
+      "path": "lingbotvla/utils/__init__.py",
+      "size": 600,
+      "sha256": "ced14be479d27e864cf3557c37d8abe00d2204ba6c030620bf48ea85e25a5921"
+    },
+    {
+      "path": "lingbotvla/utils/logging.py",
+      "size": 4024,
+      "sha256": "0311934e4d0382950bf2f1c77435117f3f8ce673d1bfec62d46e8cd83d6b0610"
+    },
+    {
+      "path": "lingbotvla/data/__init__.py",
+      "size": 1255,
+      "sha256": "db4230123017f1d3f684b402e46b8d94bdd6583f9bc18100c7401855a2b4af2b"
+    },
+    {
+      "path": "lingbotvla/data/vla_data/__init__.py",
+      "size": 83,
+      "sha256": "362282de0f8ac1ab332571a3e52ad29e40430a9cd43c7f1f7de003a0d77abb67"
+    },
+    {
+      "path": "lingbotvla/data/vla_data/ee_pose_transform.py",
+      "size": 6269,
+      "sha256": "07a54ad75ca3bb0a7f65ab8e726452548679ae272d960c20b742c5222f13ea53"
+    },
+    {
+      "path": "lingbotvla/data/vla_data/transform.py",
+      "size": 21379,
+      "sha256": "e8f237c99ebf6cb4b16178b9bca7fba147337071f004aca8a135ac11f8ca2e49"
+    },
+    {
+      "path": "lingbotvla/data/vla_data/utils.py",
+      "size": 30006,
+      "sha256": "cfbd6e08dda8f7a3a462c50f6c230c372189f8148b3ffe6a962e240dccd86a16"
+    },
+    {
+      "path": "lingbotvla/data/vla_data/video_utils.py",
+      "size": 17359,
+      "sha256": "016244862ef3bae740ecd55314028dc64c09893553bea2d639dd7b0273110746"
+    },
+    {
+      "path": "deploy/lingbot_vla_v2_policy.py",
+      "size": 23601,
+      "sha256": "ede2f532ea9cf06acd49fadb6915c5b8da2caa09dbd342cfb82754f182f386d2"
+    },
+    {
+      "path": "lingbotvla/utils/helper.py",
+      "size": 14260,
+      "sha256": "c35007430238271bcf394cd7d870ae66ac0c92413babbddca64732db6ee7d356"
+    }
+  ],
+  "source_url": "https://github.com/Robbyant/lingbot-vla-v2",
+  "license": "Apache-2.0 source; bundled subprojects and weights require their own review"
+}

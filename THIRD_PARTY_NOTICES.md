@@ -1,11 +1,5 @@
-# 第三方说明
+# Third-party notices
 
-本源码包未复制第三方源码、mesh、模型、数据集、权重或二进制依赖。上游仅通过现有安装 API 调用或只读源码/公开文档核对。
-
-- LeRobot（已核实 Seeed fork 固定 commit）：Apache-2.0；运行依赖不随本包分发。
-- Franka description / franka_ros2 / libfranka：本轮所读 LICENSE/package 声明 Apache-2.0；未分发。
-- IsaacLab：未分发，具体框架/扩展与 NVIDIA Isaac Sim 专有组件须分别审查，不能统一套用一个许可证。
-- MuJoCo、numpy、torch 等由既有环境提供；未来安装/分发逐个保留其许可，不纳入本工程自定义代码许可。
-- LingBot VLA 2 公开官方页面显示 Apache-2.0，但本轮未固定/复制其代码或选定 checkpoint；权重及配套模型条款必须单独核验。
-
-新写集成代码的许可待实验室政策决定；未擅自指定开源许可证。详细来源与 commit 见 migration/SOURCE_PROVENANCE.md 和 repos.lock.json。
+- Franka Robotics, franka_description 2.8.1, Apache-2.0. Source commit 02afaae282d4a8e10d7d2f781b23b3515c303ce5. Copied collision meshes and metadata, generated dual-arm URDF/MJCF; license and upstream notice in assets/fr3_reference/LICENSE and NOTICE. Modification: two prefixed arms with virtual bases, collision-only visual representation, simulation actuators and TCP sites. Not a calibrated lab assembly.
+- Robbyant Team and contributors, lingbot-vla-v2, Apache-2.0 source license, commit be969b8fd117fb70550c5d4bf4bc328211b5b1b6. configs/vla/lingbot_train_candidate.yaml derives from configs/vla/real_robot/real_robot.yaml with local placeholder paths and smaller candidate training parameters. Apache-2.0 license text: assets/fr3_reference/LICENSE. No model weights or full source distribution included.
+- LeRobot, OpenPI, Mink, MuJoCo, Vuer/OpenTeleVision, ROS2 and Isaac Lab are referenced runtime dependencies; their code and binary environments are not relicensed by this project. Their individual distribution terms remain applicable. No global license has yet been assigned to this project's original code.
