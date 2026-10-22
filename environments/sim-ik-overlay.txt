@@ -1,0 +1,4 @@
+mink==1.2.0
+qpsolvers==4.13.0
+daqp==0.8.5
+scipy==1.18.1

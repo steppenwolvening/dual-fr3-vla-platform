@@ -24,3 +24,6 @@ log/
 *.egg-info/
 .cache/
 dist/
+
+.venv-sim/
+.deps/
