@@ -1,0 +1,14 @@
+{
+  "hardware": "Dual FR3 + Franka Gripper",
+  "review_status": "UNCONFIGURED",
+  "model_sha256": "UNCONFIGURED",
+  "assembly_revision": "UNCONFIGURED",
+  "calibration_version": "UNCONFIGURED",
+  "joint_names": {
+    "left": "UNCONFIGURED",
+    "right": "UNCONFIGURED"
+  },
+  "gripper_width_mapping": "UNCONFIGURED",
+  "tcp_frames": "UNCONFIGURED",
+  "mesh_dependency_closure": "UNCONFIGURED"
+}

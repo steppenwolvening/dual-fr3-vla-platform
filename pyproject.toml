@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dual-fr3-vla-platform"
+version = "0.1.0"
+description = "Canonical offline data foundation and clean migration package for Dual FR3 research"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+fr3-platform = "fr3_platform.cli:main"

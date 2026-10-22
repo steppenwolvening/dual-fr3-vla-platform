@@ -1,0 +1,1 @@
+{"engine": "3.9.0", "steps": 20, "headless": true, "input": "primitive sphere, not robot model", "engine_smoke": "PASS_SIM", "dual_fr3_mink": "BLOCKED", "time_s": 0.04000000000000002}

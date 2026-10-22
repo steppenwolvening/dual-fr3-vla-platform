@@ -1,0 +1,151 @@
+{
+  "recorded_utc": "2026-10-22T05:19:01.785213+00:00",
+  "run_directory": "/home/aning/robotics/migration_staging/dual-fr3-vla-platform/artifacts/validation-20261022T051855Z",
+  "tests": [
+    {
+      "name": "core_unit",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/test.py"
+      ],
+      "interpreter": "/usr/bin/python3",
+      "input": "synthetic unit fixtures",
+      "exit_code": 0,
+      "status": "PASS_UNIT",
+      "log": "validation/core_unit.log"
+    },
+    {
+      "name": "synthetic",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/fr3.py",
+        "synthetic",
+        "/home/aning/robotics/migration_staging/dual-fr3-vla-platform/artifacts/validation-20261022T051855Z/episode"
+      ],
+      "interpreter": "/usr/bin/python3",
+      "input": "8 synthetic RGB/depth/tactile frames",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/synthetic.log"
+    },
+    {
+      "name": "validator",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/fr3.py",
+        "validate",
+        "/home/aning/robotics/migration_staging/dual-fr3-vla-platform/artifacts/validation-20261022T051855Z/episode"
+      ],
+      "interpreter": "/usr/bin/python3",
+      "input": "canonical synthetic episode",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/validator.log"
+    },
+    {
+      "name": "replay",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/fr3.py",
+        "replay",
+        "/home/aning/robotics/migration_staging/dual-fr3-vla-platform/artifacts/validation-20261022T051855Z/episode"
+      ],
+      "interpreter": "/usr/bin/python3",
+      "input": "canonical synthetic episode",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/replay.log"
+    },
+    {
+      "name": "twin_protocol",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/fr3.py",
+        "twin-publish",
+        "/home/aning/robotics/migration_staging/dual-fr3-vla-platform/artifacts/validation-20261022T051855Z/episode"
+      ],
+      "interpreter": "/usr/bin/python3",
+      "input": "recorded state JSONL; not two simulators",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/twin_protocol.log"
+    },
+    {
+      "name": "lerobot_reader",
+      "command": [
+        "/home/aning/miniforge3/envs/lerobot/bin/python",
+        "-B",
+        "tools/fr3.py",
+        "export-lerobot",
+        "/home/aning/robotics/migration_staging/dual-fr3-vla-platform/artifacts/validation-20261022T051855Z/episode",
+        "/home/aning/robotics/migration_staging/dual-fr3-vla-platform/artifacts/validation-20261022T051855Z/lerobot",
+        "--label",
+        "sent",
+        "--fps",
+        "10",
+        "--tolerance-ms",
+        "20"
+      ],
+      "interpreter": "/home/aning/miniforge3/envs/lerobot/bin/python",
+      "input": "synthetic train-only explicit profile; real LeRobot reader",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/lerobot_reader.log"
+    },
+    {
+      "name": "mujoco_engine",
+      "command": [
+        "/home/aning/miniforge3/envs/mujoco_sim/bin/python",
+        "-B",
+        "tools/mujoco_engine_smoke.py"
+      ],
+      "interpreter": "/home/aning/miniforge3/envs/mujoco_sim/bin/python",
+      "input": "primitive sphere only; not FR3 model",
+      "exit_code": 0,
+      "status": "PASS_SIM",
+      "log": "validation/mujoco_engine.log"
+    },
+    {
+      "name": "static_parse",
+      "status": "PASS_UNIT",
+      "input": "all authored Python files",
+      "command": [
+        "ast.parse"
+      ],
+      "interpreter": "/usr/bin/python3",
+      "exit_code": 0
+    },
+    {
+      "name": "source_files_unchanged",
+      "status": "PASS_OFFLINE",
+      "checked_files": 17,
+      "changed": [],
+      "evidence": "FILE_VERIFIED",
+      "exit_code": false
+    }
+  ],
+  "prohibited_actions_executed": false,
+  "overall_scope": "offline foundation only; unresolved integrations explicitly BLOCKED",
+  "interpreters_runtime_verified": {
+    "core": {
+      "interpreter": "/usr/bin/python3",
+      "runtime_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "evidence": "FILE_VERIFIED"
+    },
+    "data": {
+      "interpreter": "/home/aning/miniforge3/envs/lerobot/bin/python",
+      "runtime_version": "3.10.20 | packaged by conda-forge | (main, Jun 11 2026, 03:31:56) [GCC 14.3.0]",
+      "evidence": "FILE_VERIFIED"
+    },
+    "robot_core": {
+      "interpreter": "/home/aning/miniforge3/envs/mujoco_sim/bin/python",
+      "runtime_version": "3.12.14 | packaged by conda-forge | (main, Aug 21 2026, 22:48:28) [GCC 14.4.0]",
+      "evidence": "FILE_VERIFIED"
+    }
+  }
+}

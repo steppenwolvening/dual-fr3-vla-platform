@@ -1,0 +1,50 @@
+{
+  "input": "source archive extracted to a fresh directory",
+  "status": "PASS_OFFLINE",
+  "old_source_or_env_needed": false,
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/test.py"
+      ],
+      "exit_code": 0,
+      "output": "test_archive_tamper_rejected (test_bundle.BundleTests.test_archive_tamper_rejected) ... ok\ntest_archive_traversal_rejected (test_bundle.BundleTests.test_archive_traversal_rejected) ... ok\ntest_authority_exclusion (test_core.ControlTests.test_authority_exclusion) ... ok\ntest_deadman_tracking_disconnect_and_estop (test_core.ControlTests.test_deadman_tracking_disconnect_and_estop) ... ok\ntest_duplicate_sequence (test_core.ControlTests.test_duplicate_sequence) ... ok\ntest_expired_lease (test_core.ControlTests.test_expired_lease) ... ok\ntest_hardware_sink_forbidden (test_core.ControlTests.test_hardware_sink_forbidden) ... ok\ntest_missing_limits_and_state (test_core.ControlTests.test_missing_limits_and_state) ... ok\ntest_stale_future_and_wrong_clock (test_core.ControlTests.test_stale_future_and_wrong_clock) ... ok\ntest_valid_offline_submission (test_core.ControlTests.test_valid_offline_submission) ... ok\ntest_velocity_position_and_gripper_limits (test_core.ControlTests.test_velocity_position_and_gripper_limits) ... ok\ntest_backpressure_count (test_core.CoreTests.test_backpressure_count) ... ok\ntest_bad_gripper_quantity (test_core.CoreTests.test_bad_gripper_quantity) ... ok\ntest_bad_pose_quaternion (test_core.CoreTests.test_bad_pose_quaternion) ... ok\ntest_causal_alignment_excludes_future (test_core.CoreTests.test_causal_alignment_excludes_future) ... ok\ntest_checksum_corruption (test_core.CoreTests.test_checksum_corruption) ... ok\ntest_clock_uncertainty_is_conservative (test_core.CoreTests.test_clock_uncertainty_is_conservative) ... ok\ntest_command_before_observation (test_core.CoreTests.test_command_before_observation) ... ok\ntest_command_requires_real_state_reference (test_core.CoreTests.test_command_requires_real_state_reference) ... ok\ntest_complete_episode_and_lossless_depth (test_core.CoreTests.test_complete_episode_and_lossless_depth) ... ok\ntest_export_profile_semantics (test_core.CoreTests.test_export_profile_semantics) ... ok\ntest_export_rejects_irregular_rate (test_core.CoreTests.test_export_rejects_irregular_rate) ... ok\ntest_export_rejects_validation_fit (test_core.CoreTests.test_export_rejects_validation_fit) ... ok\ntest_missing_clock_mapping (test_core.CoreTests.test_missing_clock_mapping) ... ok\ntest_missing_frame (test_core.CoreTests.test_missing_frame) ... ok\ntest_missing_measurement_not_zero (test_core.CoreTests.test_missing_measurement_not_zero) ... ok\ntest_nan_and_infinity (test_core.CoreTests.test_nan_and_infinity) ... ok\ntest_no_overwrite (test_core.CoreTests.test_no_overwrite) ... ok\ntest_path_traversal_and_symlinks (test_core.CoreTests.test_path_traversal_and_symlinks) ... ok\ntest_ros_conda_contamination_detected (test_core.CoreTests.test_ros_conda_contamination_detected) ... ok\ntest_ros_mapping_is_explicit (test_core.CoreTests.test_ros_mapping_is_explicit) ... ok\ntest_schema_serialization (test_core.CoreTests.test_schema_serialization) ... ok\ntest_sensor_requires_blob (test_core.CoreTests.test_sensor_requires_blob) ... ok\ntest_sent_requires_request (test_core.CoreTests.test_sent_requires_request) ... ok\ntest_sequence_gap (test_core.CoreTests.test_sequence_gap) ... ok\ntest_timestamp_regression (test_core.CoreTests.test_timestamp_regression) ... ok\ntest_torn_tail_and_non_destructive_recovery (test_core.CoreTests.test_torn_tail_and_non_destructive_recovery) ... ok\ntest_twin_source_timestamp_comparison (test_core.CoreTests.test_twin_source_timestamp_comparison) ... ok\ntest_unconfigured_sensors_fail (test_core.CoreTests.test_unconfigured_sensors_fail) ... ok\ntest_unverified_model_fails_before_import (test_core.CoreTests.test_unverified_model_fails_before_import) ... ok\ntest_vr_clutch_jump_deadman (test_core.CoreTests.test_vr_clutch_jump_deadman) ... ok\ntest_writer_failure_reported (test_core.CoreTests.test_writer_failure_reported) ... ok\ntest_wrong_dimension_and_joint_order (test_core.CoreTests.test_wrong_dimension_and_joint_order) ... ok\ntest_wrong_valid_fields (test_core.CoreTests.test_wrong_valid_fields) ... ok\n\n----------------------------------------------------------------------\nRan 44 tests in 1.081s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/fr3.py",
+        "synthetic",
+        "artifacts/restored-episode"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"ok\": true,\n  \"events\": 64,\n  \"errors\": [],\n  \"sequence_gaps\": []\n}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/fr3.py",
+        "validate",
+        "artifacts/restored-episode"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"ok\": true,\n  \"events\": 64,\n  \"errors\": [],\n  \"sequence_gaps\": []\n}\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools/fr3.py",
+        "replay",
+        "artifacts/restored-episode"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"events\": 64,\n  \"source\": \"recorded\",\n  \"hardware_sent\": 0\n}\n"
+    }
+  ],
+  "candidate_archive_sha256": "f6e495fbffbce1829dd435bda2136e172e3a3062098ee40c57ec72ece62d9863"
+}

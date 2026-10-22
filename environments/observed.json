@@ -1,0 +1,39 @@
+{
+  "core": {
+    "python_tested": "3.12.3",
+    "dependencies": [],
+    "lock_status": "STDLIB_ONLY"
+  },
+  "data": {
+    "python_tested": "3.10.20",
+    "lerobot": "0.4.4",
+    "torch": "2.7.1+cu128",
+    "numpy": "2.2.6",
+    "reader_pin": "environments/lerobot-reader-pin.json",
+    "lock_status": "PARTIAL_SOURCE_PIN_NO_TRANSITIVE_HASH_LOCK"
+  },
+  "robot_core": {
+    "python_observed": "3.12.14",
+    "mujoco": "3.9.0",
+    "numpy": "2.5.2",
+    "mink": "UNRESOLVED",
+    "quest_sdk": "UNRESOLVED",
+    "realsense_sdk": "UNRESOLVED",
+    "lock_status": "UNRESOLVED"
+  },
+  "isaaclab": {
+    "repository_version": "3.0.0",
+    "installed_package_version": "6.1.14",
+    "isaacsim_metadata_version": "6.0.1.0",
+    "internal_runtime_version": "UNKNOWN",
+    "torch": "2.10.0+cu128",
+    "torchaudio_installed": "2.11.0",
+    "torchaudio_declared": "2.10.0",
+    "lock_status": "BLOCKED_CONFLICT"
+  },
+  "lingbot": {
+    "code_revision": "UNRESOLVED",
+    "checkpoint": "UNCONFIGURED",
+    "lock_status": "UNRESOLVED"
+  }
+}

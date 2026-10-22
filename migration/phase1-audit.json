@@ -1,0 +1,178 @@
+{
+  "evidence": "FILE_VERIFIED",
+  "host": "aning-ROG-Strix-SCAR-16-G635LX-G635LX",
+  "interpreter": "/usr/bin/python3",
+  "python": "3.12.3",
+  "repos": {
+    "franka_description": {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_description",
+      "url": "https://github.com/frankarobotics/franka_description.git",
+      "commit": "02afaae282d4a8e10d7d2f781b23b3515c303ce5",
+      "tracked_status": "",
+      "evidence": "FILE_VERIFIED"
+    },
+    "franka_ros2": {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_ros2",
+      "url": "https://github.com/frankarobotics/franka_ros2.git",
+      "commit": "b4164f555500fe50c3f44f24d4cccc452ffac442",
+      "tracked_status": "",
+      "evidence": "FILE_VERIFIED"
+    },
+    "libfranka": {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/libfranka",
+      "url": "https://github.com/frankarobotics/libfranka.git",
+      "commit": "3cc708cafa1cdba49ceaab536a14216dfb7bf48a",
+      "tracked_status": "",
+      "evidence": "FILE_VERIFIED"
+    },
+    "IsaacLab": {
+      "path": "/home/aning/robotics/repos/IsaacLab",
+      "url": "https://github.com/isaac-sim/IsaacLab.git",
+      "commit": "ffff603eafc6b74264a5261cc0183d6a65390d78",
+      "tracked_status": "",
+      "evidence": "FILE_VERIFIED"
+    },
+    "lerobot": {
+      "path": "/home/aning/Desktop/lerobot",
+      "url": "https://github.com/Seeed-Projects/lerobot.git",
+      "commit": "0f392484458cb5ebca0310c0c4c47390a31c80ed",
+      "tracked_status": "M src/lerobot/scripts/lerobot_record.py",
+      "evidence": "FILE_VERIFIED"
+    },
+    "flexitac_sim_reference": {
+      "path": "/home/aning/Desktop/flexitac_fr3_twin_dc2e1c6",
+      "url": "https://github.com/binghao-huang/FlexiTac-IsaacSim-Simulation.git",
+      "commit": "dc2e1c6607a1b1a0e4b196bb4e2d4ccdc1afdcb0",
+      "tracked_status": "",
+      "evidence": "FILE_VERIFIED"
+    }
+  },
+  "source_files": [
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_description/package.xml",
+      "size": 909,
+      "sha256": "328813744c48c16e5eb9e033e7785313512067049a9c4340dafc780192c951d3"
+    },
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_description/LICENSE",
+      "size": 12926,
+      "sha256": "4b25434e6ec2012e28a484f1d7924a0fd1a8bf232c2be2d50d584d299d04d6d6"
+    },
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_description/robots/fr3/kinematics.yaml",
+      "size": 831,
+      "sha256": "44326830a6773dd6611cdf9947045eeb3276ea4e3ca47a05272816c862c8e386"
+    },
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_description/robots/fr3/joint_limits.yaml",
+      "size": 1374,
+      "sha256": "42e999184f37689568b58f320d062859053f03c62c8b49bf00a00d69f20d7a65"
+    },
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_ros2/dependency.repos",
+      "size": 920,
+      "sha256": "3cff8406dc96ef121daa958f436168463a5b8beafc09483555f3adfd4bbdb415"
+    },
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_ros2/franka_bringup/test/test_fr3_duo_interfaces.py",
+      "size": 7081,
+      "sha256": "a8548317342cb68bd5abaa171803671467b32efcbd990f69d3ed99df7119ca0a"
+    },
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/franka_ros2/franka_bringup/urdf/fr3_duo.urdf.xacro",
+      "size": 2135,
+      "sha256": "3854ef3780810c5e62e2935939cd230fa4963901513ba7a64b4a3893873e483e"
+    },
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/libfranka/package.xml",
+      "size": 1213,
+      "sha256": "2cf699c1d2baf3abdbd7d74741fa161099cfaa9371d74f815e80e20d7c3ee233"
+    },
+    {
+      "path": "/home/aning/robotics/vendor/franka_official/repos/libfranka/LICENSE",
+      "size": 10173,
+      "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+    },
+    {
+      "path": "/home/aning/robotics/repos/IsaacLab/VERSION",
+      "size": 6,
+      "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c"
+    },
+    {
+      "path": "/home/aning/robotics/repos/IsaacLab/pyproject.toml",
+      "size": 8504,
+      "sha256": "e98461884f504be11c5390623fce0a23ec7aa48ba45f99a8fa63ba279a750a9f"
+    },
+    {
+      "path": "/home/aning/Desktop/lerobot/pyproject.toml",
+      "size": 14297,
+      "sha256": "13dfedf2ad94b402715fee0aca6fdde7087727a251d279b71d1501e095514247"
+    },
+    {
+      "path": "/home/aning/Desktop/lerobot/src/lerobot/datasets/lerobot_dataset.py",
+      "size": 78710,
+      "sha256": "2f4600e4cfde07fd16ee2c01305f61458c028ed4182562ddc07b106177927766"
+    },
+    {
+      "path": "/home/aning/Desktop/lerobot/src/lerobot/scripts/lerobot_record.py",
+      "size": 23499,
+      "sha256": "9bdb5bc5f005ee3f8839909687ee91bc783400a3bfa48e65b9d62c01945d5ea4"
+    },
+    {
+      "path": "/home/aning/Desktop/flexitac_fr3_twin_dc2e1c6/README.md",
+      "size": 3815,
+      "sha256": "605ead086e56e4913a48d505e65588c59253f2c0b8e9d5a778d6184d03684910"
+    },
+    {
+      "path": "/home/aning/Desktop/flexitac_fr3_twin_dc2e1c6/environment.yml",
+      "size": 285,
+      "sha256": "80cded6bfff32ad9fb7c2809d11cba0bf6df7d0a33f0dc2f9a2b3cfeac1dd2dd"
+    },
+    {
+      "path": "/home/aning/Desktop/flexitac_fr3_twin_dc2e1c6/fr3_adapter/README.md",
+      "size": 14212,
+      "sha256": "069c4fad20260cee48589c204e3cbbaf64b345e00acd183a17c5ca9f93806a57"
+    }
+  ],
+  "environments": {
+    "/home/aning/miniforge3/envs/mujoco_sim": {
+      "evidence": "FILE_VERIFIED",
+      "metadata_only": true,
+      "packages": {
+        "mujoco": "3.9.0",
+        "numpy": "2.5.2"
+      }
+    },
+    "/home/aning/miniforge3/envs/lerobot": {
+      "evidence": "FILE_VERIFIED",
+      "metadata_only": true,
+      "packages": {
+        "lerobot": "0.4.4",
+        "torchvision": "0.22.1+cu128",
+        "torchaudio": "2.7.1+cu128",
+        "torch": "2.7.1+cu128",
+        "numpy": "2.2.6"
+      }
+    },
+    "/home/aning/robotics/repos/IsaacLab/.venv": {
+      "evidence": "FILE_VERIFIED",
+      "metadata_only": true,
+      "packages": {
+        "torchaudio": "2.11.0",
+        "isaaclab": "6.1.14",
+        "torch": "2.10.0+cu128",
+        "torchvision": "0.25.0+cu128",
+        "mujoco": "3.8.0",
+        "isaacsim": "6.0.1.0",
+        "numpy": "2.5.2"
+      }
+    }
+  },
+  "lingbot": {
+    "evidence": "UNKNOWN",
+    "selected_checkpoint": "UNCONFIGURED",
+    "scope": "only named source roots and LingBot-named HF repo directories",
+    "hub_exists": true,
+    "matching_repositories": []
+  }
+}

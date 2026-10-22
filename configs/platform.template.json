@@ -1,0 +1,202 @@
+{
+  "schema": "fr3.platform-config/1",
+  "hardware_enabled": false,
+  "side_order": [
+    "left",
+    "right"
+  ],
+  "arms": {
+    "left": {
+      "model": "FR3",
+      "revision": "UNCONFIGURED",
+      "serial": "UNCONFIGURED",
+      "joint_order": [
+        "left_joint1",
+        "left_joint2",
+        "left_joint3",
+        "left_joint4",
+        "left_joint5",
+        "left_joint6",
+        "left_joint7"
+      ],
+      "driver_joint_map": "UNCONFIGURED",
+      "gripper_type": "UNCONFIGURED",
+      "gripper_interface": "UNCONFIGURED",
+      "endpoint": "UNCONFIGURED"
+    },
+    "right": {
+      "model": "FR3",
+      "revision": "UNCONFIGURED",
+      "serial": "UNCONFIGURED",
+      "joint_order": [
+        "right_joint1",
+        "right_joint2",
+        "right_joint3",
+        "right_joint4",
+        "right_joint5",
+        "right_joint6",
+        "right_joint7"
+      ],
+      "driver_joint_map": "UNCONFIGURED",
+      "gripper_type": "UNCONFIGURED",
+      "gripper_interface": "UNCONFIGURED",
+      "endpoint": "UNCONFIGURED"
+    }
+  },
+  "units": {
+    "joint_position": "rad",
+    "velocity": "rad/s",
+    "translation": "m",
+    "gripper": "opening_width_m"
+  },
+  "rotation": "quaternion_xyzw; delta rotation_vector_rad; left multiplication in explicit reference frame",
+  "calibration_version": "UNCONFIGURED",
+  "frames": [
+    {
+      "parent": "world",
+      "child": "left_base",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "left_base",
+      "child": "left_flange",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "left_flange",
+      "child": "left_tool",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "left_tool",
+      "child": "left_tcp",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "left_tool",
+      "child": "left_camera",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "left_tool",
+      "child": "left_sensor",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "world",
+      "child": "right_base",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "right_base",
+      "child": "right_flange",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "right_flange",
+      "child": "right_tool",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "right_tool",
+      "child": "right_tcp",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "right_tool",
+      "child": "right_camera",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    {
+      "parent": "right_tool",
+      "child": "right_sensor",
+      "transform": "UNCONFIGURED",
+      "provenance": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    }
+  ],
+  "safety": {
+    "limits": "UNCONFIGURED",
+    "watchdog": "UNCONFIGURED",
+    "validated_stop_path": "UNCONFIGURED",
+    "onsite_acceptance": "UNCONFIGURED"
+  },
+  "devices": {
+    "grippers": {
+      "count": "UNCONFIGURED",
+      "devices": "UNCONFIGURED"
+    },
+    "d405": {
+      "count": "UNCONFIGURED",
+      "model": "D405",
+      "owner": "single_capture_process",
+      "serial": "UNCONFIGURED",
+      "role": "UNCONFIGURED",
+      "sdk_version": "UNCONFIGURED",
+      "color_profile": "UNCONFIGURED",
+      "depth_profile": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED"
+    },
+    "flexitac": {
+      "count": "UNCONFIGURED",
+      "quantity": "raw_reading",
+      "protocol": "UNCONFIGURED",
+      "firmware": "UNCONFIGURED",
+      "transport": "UNCONFIGURED",
+      "shape": "UNCONFIGURED",
+      "dtype": "UNCONFIGURED",
+      "device_id": "UNCONFIGURED",
+      "timestamp_semantics": "UNCONFIGURED",
+      "calibration_version": "UNCONFIGURED",
+      "mount": "UNCONFIGURED"
+    },
+    "quest": {
+      "model": "Quest 3",
+      "transport": "UNCONFIGURED",
+      "tracking_origin": "UNCONFIGURED",
+      "robot_from_tracking": "UNCONFIGURED",
+      "deadman_binding": "UNCONFIGURED",
+      "gripper_binding": "UNCONFIGURED"
+    }
+  },
+  "paths": {
+    "canonical": "artifacts/episodes",
+    "models": "UNCONFIGURED",
+    "lingbot_checkpoint": "UNCONFIGURED"
+  },
+  "communication": {
+    "protocol": "fr3.twin/1 JSONL over process pipes/files",
+    "hardware_endpoints": "UNCONFIGURED",
+    "live_state_bridge": "UNCONFIGURED"
+  },
+  "time": {
+    "source_ns": "original device time",
+    "received_ns": "host monotonic receive time",
+    "clock_mappings": "UNCONFIGURED"
+  },
+  "extensions": {
+    "end_effector_type": "explicit tagged config; future mapping requires separate implementation"
+  }
+}

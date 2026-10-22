@@ -1,0 +1,67 @@
+{
+  "tests": [
+    {
+      "name": "core_unit",
+      "input": "synthetic unit fixtures",
+      "exit_code": 0,
+      "status": "PASS_UNIT",
+      "log": "validation/core_unit.log"
+    },
+    {
+      "name": "synthetic",
+      "input": "8 synthetic RGB/depth/tactile frames",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/synthetic.log"
+    },
+    {
+      "name": "validator",
+      "input": "canonical synthetic episode",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/validator.log"
+    },
+    {
+      "name": "replay",
+      "input": "canonical synthetic episode",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/replay.log"
+    },
+    {
+      "name": "twin_protocol",
+      "input": "recorded state JSONL; not two simulators",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/twin_protocol.log"
+    },
+    {
+      "name": "lerobot_reader",
+      "input": "synthetic train-only explicit profile; real LeRobot reader",
+      "exit_code": 0,
+      "status": "PASS_OFFLINE",
+      "log": "validation/lerobot_reader.log"
+    },
+    {
+      "name": "mujoco_engine",
+      "input": "primitive sphere only; not FR3 model",
+      "exit_code": 0,
+      "status": "PASS_SIM",
+      "log": "validation/mujoco_engine.log"
+    },
+    {
+      "name": "static_parse",
+      "status": "PASS_UNIT",
+      "input": "all authored Python files",
+      "exit_code": 0
+    },
+    {
+      "name": "source_files_unchanged",
+      "status": "PASS_OFFLINE",
+      "checked_files": 17,
+      "evidence": "FILE_VERIFIED",
+      "exit_code": false
+    }
+  ],
+  "scope": "offline foundation only; unresolved integrations explicitly BLOCKED"
+}

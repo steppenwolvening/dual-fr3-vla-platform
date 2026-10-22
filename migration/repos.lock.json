@@ -1,0 +1,74 @@
+{
+  "schema": "fr3.repo-pins/1",
+  "environment_lock_status": "UNRESOLVED",
+  "repositories": [
+    {
+      "name": "franka_description",
+      "url": "https://github.com/frankarobotics/franka_description.git",
+      "commit": "02afaae282d4a8e10d7d2f781b23b3515c303ce5",
+      "evidence": "FILE_VERIFIED",
+      "lock_status": "SOURCE_COMMIT_PINNED",
+      "use": "read-only interface/metadata reference; not copied",
+      "hardware_compatibility": "UNRESOLVED",
+      "tracked_changes": ""
+    },
+    {
+      "name": "franka_ros2",
+      "url": "https://github.com/frankarobotics/franka_ros2.git",
+      "commit": "b4164f555500fe50c3f44f24d4cccc452ffac442",
+      "evidence": "FILE_VERIFIED",
+      "lock_status": "SOURCE_COMMIT_PINNED",
+      "use": "read-only interface/metadata reference; not copied",
+      "hardware_compatibility": "UNRESOLVED",
+      "tracked_changes": ""
+    },
+    {
+      "name": "libfranka",
+      "url": "https://github.com/frankarobotics/libfranka.git",
+      "commit": "3cc708cafa1cdba49ceaab536a14216dfb7bf48a",
+      "evidence": "FILE_VERIFIED",
+      "lock_status": "SOURCE_COMMIT_PINNED",
+      "use": "read-only interface/metadata reference; not copied",
+      "hardware_compatibility": "UNRESOLVED",
+      "tracked_changes": ""
+    },
+    {
+      "name": "IsaacLab",
+      "url": "https://github.com/isaac-sim/IsaacLab.git",
+      "commit": "ffff603eafc6b74264a5261cc0183d6a65390d78",
+      "evidence": "FILE_VERIFIED",
+      "lock_status": "SOURCE_COMMIT_PINNED",
+      "use": "read-only interface/metadata reference; not copied",
+      "hardware_compatibility": "UNRESOLVED",
+      "tracked_changes": ""
+    },
+    {
+      "name": "lerobot",
+      "url": "https://github.com/Seeed-Projects/lerobot.git",
+      "commit": "0f392484458cb5ebca0310c0c4c47390a31c80ed",
+      "evidence": "FILE_VERIFIED",
+      "lock_status": "SOURCE_COMMIT_PINNED",
+      "use": "runtime SDK",
+      "hardware_compatibility": "UNRESOLVED",
+      "tracked_changes": "M src/lerobot/scripts/lerobot_record.py"
+    },
+    {
+      "name": "flexitac_sim_reference",
+      "url": "https://github.com/binghao-huang/FlexiTac-IsaacSim-Simulation.git",
+      "commit": "dc2e1c6607a1b1a0e4b196bb4e2d4ccdc1afdcb0",
+      "evidence": "FILE_VERIFIED",
+      "lock_status": "SOURCE_COMMIT_PINNED",
+      "use": "read-only interface/metadata reference; not copied",
+      "hardware_compatibility": "UNRESOLVED",
+      "tracked_changes": ""
+    },
+    {
+      "name": "lingbot-vla-v2",
+      "url": "https://github.com/Robbyant/lingbot-vla-v2",
+      "commit": null,
+      "evidence": "UNKNOWN",
+      "lock_status": "UNRESOLVED",
+      "use": "official candidate; selected local code/checkpoint missing"
+    }
+  ]
+}

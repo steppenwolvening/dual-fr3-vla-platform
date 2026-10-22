@@ -1,0 +1,9 @@
+{
+  "distribution": "lerobot",
+  "version": "0.4.4",
+  "format": "v3.0",
+  "commit": "0f392484458cb5ebca0310c0c4c47390a31c80ed",
+  "url": "https://github.com/Seeed-Projects/lerobot.git",
+  "loader_sha256": "2f4600e4cfde07fd16ee2c01305f61458c028ed4182562ddc07b106177927766",
+  "status": "SOURCE_PINNED_ENVIRONMENT_NOT_FULLY_LOCKED"
+}
