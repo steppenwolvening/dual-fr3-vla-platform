@@ -1,2 +1,2 @@
-"""Dual FR3 canonical offline foundation."""
-__version__ = '0.1.0'
+"""Dual FR3 simulation, multimodal data and isolated VLA research interfaces."""
+__version__ = "0.2.0.dev1"
