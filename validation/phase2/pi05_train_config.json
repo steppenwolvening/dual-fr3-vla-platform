@@ -1,0 +1,8 @@
+{
+  "status": "PASS_OFFLINE",
+  "scope": "actual TrainPipelineConfig serialize/from_pretrained roundtrip on CPU-only process",
+  "candidate_device": "cuda",
+  "training": "NOT_RUN",
+  "memory_profile": "NOT_RUN",
+  "config": "configs/vla/pi05_train_config.json"
+}

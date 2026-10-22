@@ -1,7 +1,7 @@
 {
   "version": "0.2.0.dev1",
   "release_gate": "PARTIAL",
-  "core": {"implementation":"IMPLEMENTED","validation":"PASS_UNIT","tests":53},
+  "core": {"implementation":"IMPLEMENTED","validation":"PASS_UNIT","tests":55},
   "dual_fr3_mink": {"implementation":"IMPLEMENTED","validation":"PASS_SIM","assembly":"virtual reference, not lab calibration"},
   "vr_se3_replay": {"implementation":"IMPLEMENTED","validation":"PASS_SIM"},
   "quest_device": {"implementation":"PARTIAL","validation":"NOT_RUN","blocker":"Vuer dependency approval, trusted TLS, physical controllers and calibration"},

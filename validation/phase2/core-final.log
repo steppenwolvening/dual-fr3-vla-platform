@@ -44,6 +44,8 @@ test_wrong_dimension_and_joint_order (test_core.CoreTests.test_wrong_dimension_a
 test_wrong_valid_fields (test_core.CoreTests.test_wrong_valid_fields) ... ok
 test_legacy_synthetic (test_phase2_contracts.SourceTests.test_legacy_synthetic) ... ok
 test_mixed_source_declarations (test_phase2_contracts.SourceTests.test_mixed_source_declarations) ... ok
+test_split_label_mismatch (test_phase2_contracts.SplitTests.test_split_label_mismatch) ... ok
+test_three_way_disjoint (test_phase2_contracts.SplitTests.test_three_way_disjoint) ... ok
 test_bad_dimension_and_nan (test_vla.VLATests.test_bad_dimension_and_nan) ... ok
 test_conflicting_vr_authority (test_vla.VLATests.test_conflicting_vr_authority) ... ok
 test_invalid_prediction_holds_and_revokes (test_vla.VLATests.test_invalid_prediction_holds_and_revokes) ... ok
@@ -53,6 +55,6 @@ test_column_major_buttons_and_missing_arm (test_vuer_input.VuerTests.test_column
 test_unconfigured_origin_rejected (test_vuer_input.VuerTests.test_unconfigured_origin_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 53 tests in 0.997s
+Ran 55 tests in 1.020s
 
 OK

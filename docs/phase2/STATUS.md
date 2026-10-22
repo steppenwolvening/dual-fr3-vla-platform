@@ -12,4 +12,4 @@
 - **PARTIAL / PASS_OFFLINE**：D405/FlexiTac的synthetic/replay接口与原始数据保存。真实serial、固件、FlexiTac帧协议、标定、掉帧策略必须到设备后验证；没有真实读取成功声明。
 - **PARTIAL / NOT_RUN**：GitHub本地发布准备，公开可见按用户最新指示；独立创建/push/Release及归属审核待批准。Docker按要求延期。
 
-当前53项unit/offline回归通过，另有独立MuJoCo/Mink、VR、数据、PI05、LingBot、ROS检查证据。环境具体版本见environments/phase2-runtime-audit.json，GPU实测24GB Laptop，训练峰值/吞吐未知。其他尚未满足条件均保留，不把“配置已写”记为“实机/模型通过”。
+当前55项unit/offline回归通过，另有独立MuJoCo/Mink、VR、数据、PI05、LingBot、ROS检查证据。环境具体版本见environments/phase2-runtime-audit.json，GPU实测24GB Laptop，训练峰值/吞吐未知。其他尚未满足条件均保留，不把“配置已写”记为“实机/模型通过”。

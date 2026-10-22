@@ -2,7 +2,7 @@
 
 这是开发基线，完整硬件/模型/双Twin尚未验收。所有命令从工程根执行，输出目录必须不存在。旧v0.1原目录不修改。
 
-1. 核心无依赖回归：`python3 -B tools/test.py`（当前53项）。
+1. 核心无依赖回归：`python3 -B tools/test.py`（当前55项）。
 2. 在获准的MuJoCo3.9/Mink1.2环境执行 `python -B tools/smoke_dual_fr3.py`、`python -B tools/check_vr_mapping.py`。
 3. 同一sim环境执行 `python -B tools/record_vr_sim.py artifacts/my-vr`，生成明确synthetic/simulation的train/validation/test。
 4. 已审计LeRobot0.4.4环境执行 `python -B tools/export_splits.py artifacts/my-vr/splits.json artifacts/my-lerobot`。

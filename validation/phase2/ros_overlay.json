@@ -1,0 +1,10 @@
+{
+  "status": "PASS_OFFLINE",
+  "command": "colcon --log-base artifacts/ros-colcon-log build --base-paths ros2_overlay/src --build-base artifacts/ros-build --install-base artifacts/ros-install --symlink-install",
+  "packages": [
+    "dual_fr3_bridge"
+  ],
+  "result": "1 package finished",
+  "system_modified": false,
+  "hardware": "NOT_RUN"
+}

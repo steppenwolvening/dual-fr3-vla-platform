@@ -4,9 +4,9 @@ from pathlib import Path
 sys.dont_write_bytecode=True
 root=Path(__file__).resolve().parents[1];sys.path.insert(0,str(root/'src'))
 for k in ('HF_HUB_OFFLINE','HF_DATASETS_OFFLINE','HF_HUB_DISABLE_IMPLICIT_TOKEN','HF_HUB_DISABLE_TELEMETRY'):os.environ[k]='1'
-from fr3_platform.dataset_v2 import export_split
+from fr3_platform.dataset_v2 import export_split,validate_split_manifest
 p=argparse.ArgumentParser();p.add_argument('manifest',type=Path);p.add_argument('output',type=Path);a=p.parse_args()
-m=json.loads(a.manifest.read_text());a.output.mkdir(parents=True,exist_ok=False)
+m=json.loads(a.manifest.read_text());validate_split_manifest(m);a.output.mkdir(parents=True,exist_ok=False)
 reports=[]
 for split in ('train','validation','test'):
  reports.append(export_split(m['episodes'][split],a.output/split,split=split,cameras=m['cameras'],label=m['label'],fps=m['fps'],tolerance_ns=m['tolerance_ns'],training_stats=None if split=='train' else a.output/'train/training_statistics.json'))

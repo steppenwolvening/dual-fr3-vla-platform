@@ -6,7 +6,7 @@
 
 | 模块 | 本轮实际结果 |
 |---|---|
-| 核心契约/数据/安全边界 | 53项unit/offline测试通过，原44项保留 |
+| 核心契约/数据/安全边界 | 55项unit/offline测试通过，原44项保留 |
 | 官方双FR3 + Franka Hand / Mink | PASS_SIM：FK/IK、双臂轨迹、限位/碰撞检查 |
 | VR SE(3)→Mink→MuJoCo | PASS_SIM：合成控制器离线回放；真实Quest NOT_RUN |
 | 三相机RGB-D + tactile raw | 60帧/720事件，canonical录制/校验/回放；传感器均synthetic |

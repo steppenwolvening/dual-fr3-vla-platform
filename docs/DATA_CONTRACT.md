@@ -32,7 +32,7 @@ requested→sent 可以有适配/限幅变化，但必须同 command_id/observat
 
 LeRobot 导出字段顺序：左臂七位置、右臂七位置、左宽度、右宽度；float32，动作是绝对目标，维数 16 仅属于此 profile。
 RGB 是原始 rgb8 → SDK PNG image → reader CHW /255，不缩放/裁剪。Depth/tactile 不导出为模型输入，完整留在 canonical source。
-本版仅 train 划分可导出，LeRobot stats 来源为该训练 episode，不能作为实际任务归一化统计。validation/test 因复用固定训练统计尚未实现而显式拒绝。
+旧CLI单相机export-lerobot入口继续只接受train。v0.2的tools/export_splits.py支持多相机train/validation/test，所有episode ID跨三组互斥；统计仅从train拟合，validation/test严格复用冻结统计。合成fixture统计只用于管线测试，不是实际任务统计。
 每次写入新目录，canonical_mapping.json 保存时钟映射、标签、loader pin、源数据摘要、字段/单位、相机处理及逐样本关联。
 
 ## 多模态原始数据

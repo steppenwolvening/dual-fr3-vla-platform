@@ -90,3 +90,17 @@ def export_split(episodes,destination,*,split,cameras,label,fps,tolerance_ns,tra
               'rows':[{'episode_id':r.meta['episode_id'],'observation_id':row['observation_id'],'command_event_id':row['command_event_id'],'source_time_ns':row['source_time_ns'],'images':{name:e['id'] for name,e in row['images'].items()}} for r,rows in prepared for row in rows]}
     atomic_json(dest/'canonical_mapping.json',manifest)
     return {'status':'PASS_OFFLINE','split':split,'reader_frames':len(loaded),'cameras':list(cameras),'stats_sha256':stats_hash,'stats_fitting_calls':fit_calls}
+
+
+def validate_split_manifest(manifest):
+    """Reject cross-split episode reuse before creating any output directories."""
+    require(set(manifest['episodes'])=={'train','validation','test'},'three explicit data splits required')
+    seen=set()
+    for split,paths in manifest['episodes'].items():
+        require(bool(paths),'empty split')
+        for path in paths:
+            meta=DatasetReader(path).meta
+            require(meta['split']==split,'split manifest disagrees with episode metadata')
+            require(meta['episode_id'] not in seen,'episode id reused across train/validation/test')
+            seen.add(meta['episode_id'])
+    return len(seen)
