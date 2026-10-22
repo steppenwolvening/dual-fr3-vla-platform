@@ -1,0 +1,13 @@
+# Data and VR integration evidence
+
+Canonical v1 remains backward compatible. Episodes may now declare each stream's exact source and contains_synthetic; a simulation state and synthetic RGB-D/tactile must not share a misleading hardware source. Requested, sent and measured records remain separate. No hardware acceptance is inferred from assigning MuJoCo actuator targets.
+
+`tools/record_vr_sim.py` drives actual Mink and MuJoCo with synthetic dual-controller SE(3) input, explicit tracking-to-world rotation and calibration identity. Clutch/recenter re-anchor to current robot poses; each arm independently requires tracking and deadman. Pose jumps, stale inputs and origin changes clear anchors. Ownership leases and watchdog are checked by OfflineExecutor. Camera sources generate three explicitly synthetic RGB/depth pairs with calibration/depth-scale metadata; tactile is explicitly synthetic raw data, not a guessed FlexiTac driver. Replay preserves source labels.
+
+Actual Quest 3 transport and button mapping: NOT_RUN / PARTIAL. This replay test does not establish Quest connectivity or validate a physical reference-frame calibration. User-selected controller button mapping and real tracking-origin calibration are required before live use. No hardware execution implementation is exposed.
+
+`tools/export_splits.py` produces independent train/validation/test LeRobot v3 roots using audited LeRobot 0.4.4. All three cameras are matched causally within an explicit tolerance to each measured-state observation. All state/action values and RGB pixels are checked through the real SDK reader. Action labels are **sent absolute joint targets**, not measured future states. The external profile is left7 + right7 rad followed by left/right full opening width in meters. Depth and tactile remain in canonical storage, not silently fed into either VLA.
+
+Irregular sampling remains rejected rather than resampled. Train statistics are fitted only on train. A source-hash-pinned, locked process-local SDK hook prevents the SDK's unconditional statistics fitting on evaluation episodes; the original SDK function is restored in finally. Validation/test receive identical frozen train statistics. The experiment consists of three distinct synthetic/simulation episode IDs following the same scripted trajectory; it tests plumbing and is **not an independent generalization benchmark**. Production splits must separate real sessions/tasks and avoid near-duplicate trajectories.
+
+Evidence: validation/phase2/vr_sim.json, lerobot_splits.json. The synthetic fixture uses 20 frames per split and 8x8 RGB images to bound smoke-test cost. This is not the camera resolution proposed for training.

@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 import queue
 import threading
-from .contracts import VERSION, validate_event, require, finite_tree, number
+from .contracts import VERSION, SOURCES, validate_event, require, finite_tree, number
 
 
 def dumps(value):
@@ -51,6 +51,10 @@ def validate_meta(meta):
         require(isinstance(meta.get(key), str) and meta[key], f'missing {key}')
     require(type(meta.get('synthetic')) is bool, 'synthetic label required')
     require(isinstance(meta.get('streams'), list) and len(set(meta['streams'])) == len(meta['streams']) and bool(meta['streams']), 'declared streams required')
+    if 'stream_sources' in meta:
+        require(set(meta['stream_sources'])==set(meta['streams']), 'complete stream source map required')
+        require(all(v in SOURCES for v in meta['stream_sources'].values()), 'invalid stream source')
+        require(meta.get('contains_synthetic') == ('synthetic' in meta['stream_sources'].values()), 'contains_synthetic flag mismatch')
     require(isinstance(meta.get('clocks'), dict), 'clock map declarations required')
     for name, c in meta['clocks'].items():
         require(c.get('common_clock') == 'episode_monotonic', 'common clock')
@@ -58,6 +62,13 @@ def validate_meta(meta):
         require(type(c.get('uncertainty_ns')) is int and c['uncertainty_ns'] >= 0, 'clock error bound')
         require(isinstance(c.get('provenance'), str) and bool(c['provenance']), 'clock map evidence')
         require(type(c.get('valid_from_ns')) is int and type(c.get('valid_to_ns')) is int and 0 <= c['valid_from_ns'] <= c['valid_to_ns'], 'clock validity interval')
+
+
+def validate_source(event, meta):
+    if 'stream_sources' in meta:
+        require(event['source']==meta['stream_sources'][event['stream']], 'declared stream source mismatch')
+    else:
+        require((event['source']=='synthetic')==meta['synthetic'], 'synthetic flag mismatch')
 
 
 class Recorder:
@@ -91,7 +102,7 @@ class Recorder:
             event['payload']['blob'] = {'path': f'blobs/{h}.bin', 'size': len(blob), 'sha256': h}
         validate_event(event)
         require(event['stream'] in self.metadata['streams'], 'undeclared stream')
-        require((event['source'] == 'synthetic') == self.metadata['synthetic'], 'episode synthetic/source mismatch')
+        validate_source(event, self.metadata)
         require(blob is not None or event['kind'] not in ('rgb','depth','tactile'), 'sensor bytes required')
         line = (dumps(event)+'\n').encode()
         require(len(line) <= self.max_event_bytes, 'event too large')
@@ -185,7 +196,7 @@ def validate(root):
             require(e['id'] not in seen, 'duplicate event id')
             seen.add(e['id']); streams.add(e['stream'])
             require(e['stream'] in r.meta['streams'], 'undeclared stream')
-            require((e['source']=='synthetic') == r.meta['synthetic'], 'synthetic flag mismatch')
+            validate_source(e, r.meta)
             s, key = e['stamp'], e['stream']
             r.common_time(e)
             if key in prev:

@@ -1,0 +1,38 @@
+[
+  {
+    "status": "PASS_OFFLINE",
+    "split": "train",
+    "reader_frames": 20,
+    "cameras": [
+      "head",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "stats_sha256": "18817b22e9fc04e8914560d50d10e37559dc2e0cdf940e982c75f1ef93c8c794",
+    "stats_fitting_calls": 1
+  },
+  {
+    "status": "PASS_OFFLINE",
+    "split": "validation",
+    "reader_frames": 20,
+    "cameras": [
+      "head",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "stats_sha256": "18817b22e9fc04e8914560d50d10e37559dc2e0cdf940e982c75f1ef93c8c794",
+    "stats_fitting_calls": 0
+  },
+  {
+    "status": "PASS_OFFLINE",
+    "split": "test",
+    "reader_frames": 20,
+    "cameras": [
+      "head",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "stats_sha256": "18817b22e9fc04e8914560d50d10e37559dc2e0cdf940e982c75f1ef93c8c794",
+    "stats_fitting_calls": 0
+  }
+]

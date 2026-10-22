@@ -13,17 +13,17 @@ from .data import DatasetReader, validate, causal_latest, atomic_json
 PROFILE = [f'{s}.joint{i}.rad' for s in SIDES for i in range(1,8)] + [f'{s}.opening_width.m' for s in SIDES]
 
 
-def training_rows(root, label, fps, tolerance_ns):
+def training_rows(root, label, fps, tolerance_ns, *, allowed_splits=('train',), camera_stream=None):
     require(label in ('requested','sent','accepted'), 'explicit training label required')
     require(type(fps) is int and 0 < fps <= 1000, 'fps')
     require(type(tolerance_ns) is int and tolerance_ns >= 0, 'alignment tolerance')
     report = validate(root)
     require(report['ok'], json.dumps(report))
     reader = DatasetReader(root)
-    require(reader.meta['split'] == 'train', 'this exporter fits train-only statistics; validation/test export BLOCKED pending pinned train statistics reuse')
+    require(reader.meta['split'] in allowed_splits, 'this exporter fits train-only statistics; validation/test export BLOCKED pending pinned train statistics reuse')
     events = list(reader)
     states = [e for e in events if e['kind']=='state']
-    images = [e for e in events if e['kind']=='rgb']
+    images = [e for e in events if e['kind']=='rgb' and (camera_stream is None or e['stream']==camera_stream)]
     commands = [e for e in events if e['kind']==label]
     require(bool(states) and bool(images) and bool(commands), 'missing state/RGB/selected label')
     require(len({e['stream'] for e in images})==1, 'select explicit camera mapping before multicamera export')

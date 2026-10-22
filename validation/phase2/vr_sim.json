@@ -1,0 +1,41 @@
+[
+  {
+    "split": "train",
+    "status": "PASS_SIM",
+    "frames": 20,
+    "events": 240,
+    "max_ik_position_residual_m": 7.537866028723628e-07,
+    "penetrating_contacts": 0,
+    "mean_mapping_ik_latency_ms": 0.93895655,
+    "tracking_loss_timeout": "PASS",
+    "VR_DEVICE": "NOT_RUN",
+    "cameras": "3 synthetic RGB-D streams; not real D405",
+    "tactile": "synthetic raw; protocol unknown"
+  },
+  {
+    "split": "validation",
+    "status": "PASS_SIM",
+    "frames": 20,
+    "events": 240,
+    "max_ik_position_residual_m": 7.537866028723628e-07,
+    "penetrating_contacts": 0,
+    "mean_mapping_ik_latency_ms": 0.89243625,
+    "tracking_loss_timeout": "PASS",
+    "VR_DEVICE": "NOT_RUN",
+    "cameras": "3 synthetic RGB-D streams; not real D405",
+    "tactile": "synthetic raw; protocol unknown"
+  },
+  {
+    "split": "test",
+    "status": "PASS_SIM",
+    "frames": 20,
+    "events": 240,
+    "max_ik_position_residual_m": 7.537866028723628e-07,
+    "penetrating_contacts": 0,
+    "mean_mapping_ik_latency_ms": 0.9698075,
+    "tracking_loss_timeout": "PASS",
+    "VR_DEVICE": "NOT_RUN",
+    "cameras": "3 synthetic RGB-D streams; not real D405",
+    "tactile": "synthetic raw; protocol unknown"
+  }
+]
