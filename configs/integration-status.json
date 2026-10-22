@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0.dev1",
+  "release_gate": "PARTIAL",
+  "core": {"implementation":"IMPLEMENTED","validation":"PASS_UNIT","tests":53},
+  "dual_fr3_mink": {"implementation":"IMPLEMENTED","validation":"PASS_SIM","assembly":"virtual reference, not lab calibration"},
+  "vr_se3_replay": {"implementation":"IMPLEMENTED","validation":"PASS_SIM"},
+  "quest_device": {"implementation":"PARTIAL","validation":"NOT_RUN","blocker":"Vuer dependency approval, trusted TLS, physical controllers and calibration"},
+  "multimodal_lerobot_v3": {"implementation":"IMPLEMENTED","validation":"PASS_OFFLINE","limitations":"synthetic cameras/tactile; irregular sampling rejected"},
+  "pi05_dataloader": {"implementation":"IMPLEMENTED","validation":"PASS_OFFLINE","scope":"real training dataset factory, before tokenizer/model"},
+  "lingbot_dataloader": {"implementation":"PARTIAL","validation":"PASS_OFFLINE","scope":"real dataset/normalization/padding batch; full processor/collator NOT_RUN"},
+  "vla_training_inference": {"implementation":"PARTIAL","validation":"NOT_RUN","blocker":"selected local dual-FR3 checkpoint, model/processor assets, full environment and execution approval"},
+  "isaac_twin": {"implementation":"PARTIAL","validation":"NOT_RUN","blocker":"bounded execution approval pending; SHADOW/independent dynamics unimplemented"},
+  "ros2_sim_bridge": {"implementation":"IMPLEMENTED","validation":"PASS_OFFLINE","scope":"overlay build and separate-process DDS localhost to actual MuJoCo"},
+  "hardware": {"implementation":"NOT_IMPLEMENTED","validation":"NOT_RUN"},
+  "github": {"implementation":"PARTIAL","validation":"NOT_RUN","visibility":"public per user","blocker":"separate create/push/release approvals and owner distribution review"},
+  "docker": {"implementation":"NOT_IMPLEMENTED","validation":"NOT_RUN","reason":"deferred per user until validated software baseline"}
+}

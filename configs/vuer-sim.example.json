@@ -1,0 +1,10 @@
+{
+  "review_status": "UNCONFIGURED",
+  "bind_host": "127.0.0.1",
+  "tls_cert": "UNCONFIGURED",
+  "tls_key": "UNCONFIGURED",
+  "tracking_origin": "UNCONFIGURED",
+  "robot_from_tracking": [[1,0,0],[0,1,0],[0,0,1]],
+  "buttons": {"deadman":"squeeze","clutch":"thumbstick","recenter":"bButton","gripper":"triggerValue"},
+  "mapping_note": "Proposed buttons only; review on actual Quest 3 before changing review_status. Opening=0.08*(1-triggerValue) meters. Receipt-only clock accepted for simulation only."
+}

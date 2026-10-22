@@ -1,0 +1,5 @@
+# Bounded Isaac execution proposal
+
+Runner: tools/isaac_replay.py, existing IsaacLab/.venv Python (Isaac Lab 6.1.14, Isaac Sim 6.0.1.0, PyTorch 2.10.0+cu128). Local official dual-FR3 URDF only; generated USD and portable Kit/log/cache outputs beneath staging artifacts/isaac-replay-001. At most 20 replay frames, headless CPU physics, no cameras, no weights, no training or robot connection. Kit may still initialize a graphics/GPU context and compile shaders. Limit the process to 180 seconds with SIGTERM then SIGKILL; stop on missing dependencies rather than install. Set XDG_CACHE_HOME and shader cache paths to staging. Installed torchaudio 2.11.0 conflicts with torch's matching 2.10.0 family; this runner does not import torchaudio and does not repair that original environment.
+
+This is prepared code, NOT_RUN. Importer compatibility, retained TCP links and mimic joints require actual execution. On success compare measured FK/joints/finger widths against independent MuJoCo reference states. REPLAY is not dynamic-controller equivalence, SHADOW or model rollout. Those remain separate gates.

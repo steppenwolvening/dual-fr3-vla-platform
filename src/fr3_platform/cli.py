@@ -29,11 +29,8 @@ def main():
         if a.cmd=='deployment-plan':
             print('PLAN ONLY: core runs with stdlib Python >=3.10.\nOptional installations require separately approved pinned environment resolution.\nROS, robot_core, data, LingBot and IsaacLab run in separate processes.\nSee migration/TARGET_SETUP.md and ENVIRONMENT_PLAN.md. No commands executed.');return 0
         if a.cmd=='integration-status':
-            print(json.dumps({'LingBot':'BLOCKED: selected checkpoint, local code pin, loader and embodiment mapping unresolved',
-                              'Quest':'BLOCKED: live transport/SDK not verified; translation-only offline mapper available',
-                              'IsaacLab':'BLOCKED: current assembly model and approved runtime test missing',
-                              'D405_FlexiTac':'BLOCKED: hardware protocol/profile/calibration verification missing',
-                              'hardware':'NOT_IMPLEMENTED: no actuator transport in this build'},indent=2));return 2
+            status=Path(__file__).resolve().parents[2]/'configs/integration-status.json'
+            print(status.read_text());return 2
         report=check()
         if report['risks']:raise ContractError('; '.join(report['risks']))
         if a.cmd=='synthetic':

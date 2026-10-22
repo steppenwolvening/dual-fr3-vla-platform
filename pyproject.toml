@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dual-fr3-vla-platform"
-version = "0.1.0"
-description = "Canonical offline data foundation and clean migration package for Dual FR3 research"
+version = "0.2.0.dev1"
+description = "Dual FR3 simulation, multimodal data and separate VLA research pipelines"
 requires-python = ">=3.10"
 dependencies = []
 

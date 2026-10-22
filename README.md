@@ -1,68 +1,38 @@
-# Dual FR3 VLA Platform — 0.1.0 离线基础包
+# Dual FR3 VLA Platform — v0.2 development baseline
 
-这是按当前 Dual FR3 + Franka Gripper + D405 + FlexiTac 重建的可执行离线基础工程。
-**完整机器人/VLA 平台尚未完成**：硬件、Quest、当前双 FR3 模型/Mink、Isaac 双 Twin 和 LingBot 集成仍 BLOCKED。
-真实可用部分为 Canonical 记录/校验/恢复/回放、命令契约与离线拒绝保护，以及固定 LeRobot 版本的实际导出回读。
+从v0.1.0保留完整Git历史的独立软件集成工程。已验证官方Dual FR3 + Franka Hand的MuJoCo/Mink控制、双控制器SE(3)离线回放、多相机LeRobot v3数据管线，以及π0.5/LingBot各自的真实数据加载与动作映射。
 
-## 无安装最小闭环
+**这是部分验收的开发基线，不是完整机器人系统发布。** 真实Quest、模型训练/推理、Isaac双Twin和真机动作尚未验收；数据测试使用明确标记的simulation/synthetic来源。新版本入口及证据见下表，历史migration目录仍保留v0.1审计资料。
 
-在工程根目录执行。只需要已有 Python >=3.10；推荐目标系统已有的 `/usr/bin/python3`。
-输出目录必须不存在；重复运行请换新目录名。所有示例均不连接设备。
+| 模块 | 本轮实际结果 |
+|---|---|
+| 核心契约/数据/安全边界 | 53项unit/offline测试通过，原44项保留 |
+| 官方双FR3 + Franka Hand / Mink | PASS_SIM：FK/IK、双臂轨迹、限位/碰撞检查 |
+| VR SE(3)→Mink→MuJoCo | PASS_SIM：合成控制器离线回放；真实Quest NOT_RUN |
+| 三相机RGB-D + tactile raw | 60帧/720事件，canonical录制/校验/回放；传感器均synthetic |
+| LeRobot v3 | train/validation/test各20帧，真实SDK逐值回读；eval不拟合统计 |
+| π0.5 | 原生训练dataset factory batch通过；tokenizer/model/training NOT_RUN |
+| LingBot VLA2 | 上游dataset/transform/normalization/padding通过；完整collator/model NOT_RUN |
+| ROS2 Jazzy | overlay构建、独立进程localhost仿真桥通过，无Franka驱动 |
+| Isaac Lab | 实际URDF场景回放脚本已准备，等待批准运行；无双Twin通过声明 |
+| GitHub/Docker | 本地提交/发布准备；创建、push、Release另行审批，Docker延后 |
 
-```bash
-/usr/bin/python3 -B tools/fr3.py preflight
-/usr/bin/python3 -B tools/test.py
-/usr/bin/python3 -B tools/fr3.py synthetic artifacts/my-synthetic-episode
-/usr/bin/python3 -B tools/fr3.py validate artifacts/my-synthetic-episode
-/usr/bin/python3 -B tools/fr3.py replay artifacts/my-synthetic-episode
-/usr/bin/python3 -B tools/fr3.py twin-publish artifacts/my-synthetic-episode
-/usr/bin/python3 -B tools/fr3.py deployment-plan
-```
-
-`replay` 只读事件，不向执行器发送。`twin-publish` 输出统一 JSONL 录制状态；它不是两个实际仿真器。
-损坏或中断 episode 可用 `fr3.py recover SOURCE NEW_DEST` 复制完整前缀，恢复结果明确标记需审查，不冒充完整 episode。
-
-## 实际 LeRobot 转换
-
-需已有且符合 `environments/lerobot-reader-pin.json` 的独立解释器。该 pin 固定 loader 的源码 SHA-256、commit、0.4.4 包版本与 v3.0 格式；不是完整依赖锁。
-使用过程内离线配置，缓存放入本工程；不要复用旧机器的绝对环境路径。
+## 最小复现
 
 ```bash
-DATA_PYTHON=/path/to/approved/data/environment/bin/python
-HF_HOME="$PWD/artifacts/hf-cache" HF_DATASETS_CACHE="$PWD/artifacts/hf-cache/datasets" \
-HF_HUB_OFFLINE=1 HF_DATASETS_OFFLINE=1 HF_HUB_DISABLE_IMPLICIT_TOKEN=1 \
-HF_HUB_DISABLE_TELEMETRY=1 XDG_CACHE_HOME="$PWD/artifacts/cache" \
-PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 \
-"$DATA_PYTHON" -B tools/fr3.py export-lerobot artifacts/my-synthetic-episode \
-artifacts/my-lerobot-export --label sent --fps 10 --tolerance-ms 20
+python3 -B tools/test.py
+python3 -B tools/fr3.py integration-status
 ```
 
-转换器实际调用 SDK writer/finalize，再调用真实 reader 验证每帧状态、动作与 RGB 像素。
-profile 明确定义为左右各七关节位置（rad）加两夹爪 opening width（m），不是推断的 LingBot action。
-本版只接受 train 划分、单路 RGB、规则状态采样与显式 joint_position/gripper 目标。
-validation/test 导出因固定训练统计复用尚未实现而拒绝。缺帧、非规则采样、缺关节/夹爪状态、未知时间映射都拒绝，不能静默补零。
-Depth/tactile 保持 Canonical 无损原始数据，未添加到 VLA 模型输入。
+integration-status在完整平台尚未验收时返回2，这是预期行为。核心只需Python>=3.10；打包工具使用Python3.12。模拟、数据、PI05、LingBot、Isaac分别使用经过审计的解释器，不混装CUDA/JAX/系统ROS。
 
-## 模型回放入口和阻塞
+完整命令：[REPRODUCE](docs/phase2/REPRODUCE.md)。实际仿真入口 `tools/smoke_dual_fr3.py`、`tools/record_vr_sim.py`；数据入口 `tools/export_splits.py`、`tools/check_pi05_batch.py`、`tools/check_lingbot_batch.py`。模型加载和评测入口默认只显示计划，实际运行必须有相应独立授权及模型资产。
 
-`tools/mujoco_engine_smoke.py` 用独立 MuJoCo 环境做 20 步基础引擎检查，输入为球体，不代表 FR3 模型验收。
-`fr3.py mujoco-replay EPISODE --model MODEL.xml --manifest REVIEWED.json` 有实际 MuJoCo 加载和命名关节状态读写逻辑，必须先取得当前装配审查通过的模型清单；本包模板为 UNCONFIGURED，当前调用应失败。
-没有 Quest SDK 服务、ROS 驱动启动、D405 设备打开、FlexiTac 假驱动、Isaac 自动启动或 LingBot 假适配器。
-`fr3.py integration-status` 以非零退出码给出阻塞状态。
+## 关键资料
 
-## 交付资料与打包
+- [当前状态](docs/phase2/STATUS.md)与[测试证据](validation/phase2)。
+- [模型来源](docs/phase2/MODEL_REFERENCE.md)、[数据/VR](docs/phase2/DATA_AND_VR.md)。
+- [双VLA语义和配置](docs/phase2/VLA_PIPELINES.md)、[ROS/Quest/GPU环境](docs/phase2/ROS_VR_ENVIRONMENTS.md)。
+- [发布审查](docs/phase2/GITHUB_PREPARATION.md)、[许可](LICENSE_REVIEW.md)、[第三方归属](THIRD_PARTY_NOTICES.md)。
 
-- `docs/STATUS.md`：逐项实现/验证状态及阻塞条件。
-- `docs/DATA_CONTRACT.md`、`docs/ARCHITECTURE.md`：实际接口与限制。
-- `migration/PHASE1_AUDIT.md`、`SOURCE_PROVENANCE.md`：只读调查、上游及排除依据。
-- `migration/VALIDATION.md`、`validation-provenance.json`：实际测试命令、解释器、输入和结果。
-- `migration/TARGET_SETUP.md`、`ENVIRONMENT_PLAN.md`、`TRANSFER_PLAN.md`：新机恢复与后续审批范围。
-
-```bash
-/usr/bin/python3 -B tools/build_bundle.py --version MY_NEW_VERSION
-/usr/bin/python3 -B tools/verify_bundle.py artifacts/dist/dual-fr3-vla-platform-MY_NEW_VERSION.tar.gz
-```
-
-源码归档排除 `.git`、权重、原始数据、二进制环境和运行缓存；synthetic 样本用上述命令重新生成。
-归档含逐文件准入说明与 SHA-256，包外另有归档 SHA-256。只检查本地归档，不上传或创建远程仓库。
-本工程未指定开源许可证，分发须先完成实验室政策与许可审查。
+实测GPU是RTX5090 **Laptop 24GB**，不是桌面32GB；没有全参数训练容量或两模型性能排名的承诺。代码仓库排除权重、数据、缓存、二进制环境、证书和凭据。自定义代码许可证尚待所有者决定；用户允许公开可见，不等于自动赋予开源许可。

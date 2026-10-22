@@ -1,0 +1,19 @@
+{
+  "status": "PASS_OFFLINE",
+  "transport": "ROS2 Jazzy DDS localhost; separate process; actual MuJoCo sink",
+  "domain": 173,
+  "state_messages": 5,
+  "receipts": [
+    {
+      "status": "submitted_to_simulation",
+      "command_id": "ros-smoke-0",
+      "semantics": "submitted_to_offline_sink; not hardware execution"
+    },
+    {
+      "status": "rejected",
+      "reason": "position/velocity limit"
+    }
+  ],
+  "hardware": "NOT_RUN",
+  "driver_loaded": false
+}
